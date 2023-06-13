@@ -15,4 +15,21 @@ class ProjectController extends Controller
             'results'=>$projects,
         ]);
     }
+
+    public function show(Project $project){
+
+        $projects = Project::with('name', 'image', 'description', 'type')->where($project->id)->first();
+
+        if ($projects) {
+            return response()->json([
+                'success' => true,
+                'results' => $projects
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'results' => 'Product not found !'
+            ]);
+        }
+    }
 }
