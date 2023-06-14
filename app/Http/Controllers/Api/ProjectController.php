@@ -28,7 +28,7 @@ class ProjectController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'results' => 'Product not found !'
+                'results' => 'Project not found !'
             ]);
         }
     }
