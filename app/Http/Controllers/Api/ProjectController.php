@@ -18,7 +18,7 @@ class ProjectController extends Controller
 
     public function show(Project $project){
 
-        $projects = Project::with('name', 'image', 'description', 'type')->where($project->id)->first();
+        $projects = Project::with('name', 'image', 'description', 'type')->where('id',$project->id)->first();
 
         if ($projects) {
             return response()->json([
