@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\LeadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('/projects', ProjectController::class);
+
+//definisco il metodo post per la 'chiamata' dello store
+Route::post('/contacts', [LeadController::class , 'store']);
